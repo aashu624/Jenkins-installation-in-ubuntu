@@ -1,0 +1,34 @@
+This installation is specific to system operating system on Ubuntu. 
+Follow the below steps: 
+
+Step1 : Install Java      $sudo apt-get update  
+$sudo apt-get install openjdk-11-jdk-headless
+
+Step2 : Add jenkins repository i.e Key 
+curl -fsSL https://pkg.jenkins.io/debian/jenkins.io.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+
+Curl - Connection between one server to other server 
+https://explainshell.com/explain?cmd=curl+-fsSL+example.org
+
+Step3: Add jenkins repo to the system i.e source list
+
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+step4 :  Install jenkins 
+
+sudo apt update
+
+sudo apt-get install jenkins
+
+step5 : verify installation [ check the firewall if its not working and allow all trafic for HTTP and HTTPs]
+
+$ systemctl status jenkins 
+
+step5 : verify installation [ check the firewall if its not working and allow all trafic for HTTP and HTTPs]
+
+$ systemctl status jenkins 
+Step7 : cat /var/lib/jenkins/secrets/initialAdminPassword
+
+Step8 : Give the password in Jenkins server opened in browser
